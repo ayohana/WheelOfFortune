@@ -10,7 +10,7 @@
 
 #### By **SpaceCoders** : Adela Darmansyah, Gulzat Karimova, Hamida Shaik, Luna Campos, Rustam Samigullin
 
-[About](#About) | [MVP Goals](#MVP-Goals)
+[About](#About) | [MVP Goals](#MVP-Goals) | [Installation Instructions](#Installation-Instructions) | [Screenshots](#Screenshots)
 
 </div>
 
@@ -61,7 +61,6 @@ TBD
 		* Hamida Shaik
 		* Luna Campos
 		* Rustam Samigullin
-	</summary>
 
 
 ﻿3 Wheel of Fortune
