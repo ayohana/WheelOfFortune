@@ -37,3 +37,8 @@ A console application that implements the game [Wheel of Fortune](https://en.wik
     - If guess is correct (not case sensitive), player wins 
 
     - If guess is not correct, keep playing 
+
+
+#Installation Instructions
+
+# Screenshots
