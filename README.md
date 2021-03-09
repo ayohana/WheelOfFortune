@@ -1,4 +1,5 @@
 
+
 ﻿# Wheel of Fortune
 
 <div align=center>
@@ -61,4 +62,12 @@ TBD
 		* Luna Campos
 		* Rustam Samigullin
 	</summary>
+
+
+﻿3 Wheel of Fortune
+
+
+#Installation Instructions
+
+# Screenshots
 
