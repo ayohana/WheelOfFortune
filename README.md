@@ -37,3 +37,15 @@ A console application that implements the game [Wheel of Fortune](https://en.wik
     - If guess is correct (not case sensitive), player wins 
 
     - If guess is not correct, keep playing 
+
+
+
+##  Future Product Roadmap
+1. Add multiple players feature into game session
+
+2. Add points system that would count points for each correct guess per player
+
+3. Add competitive mode which would allow player to loose.
+
+## Bugs 
+TBD
