@@ -1,3 +1,4 @@
+
 ﻿# Wheel of Fortune
 
 <div align=center>
@@ -49,3 +50,15 @@ A console application that implements the game [Wheel of Fortune](https://en.wik
 
 ## Bugs 
 TBD
+
+
+<details>
+	<summary>Contact and Support</summary>
+	<p>Need help or have any questions, contact SpaceCoders Team</p>
+		* Adela Darmansyah 
+		* Gulzat Karimova 
+		* Hamida Shaik
+		* Luna Campos
+		* Rustam Samigullin
+	</summary>
+
