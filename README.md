@@ -8,7 +8,7 @@
 
 #### By **SpaceCoders** : Adela Darmansyah, Gulzat Karimova, Hamida Shaik, Luna Campos, Rustam Samigullin
 
-[About](#About) | [MVP Goals](#MVP-Goals)
+[About](#About) | [MVP Goals](#MVP-Goals) | [Installation Instructions](#Installation-Instructions) | [Screenshots](#Screenshots)
 
 </div>
 
@@ -39,10 +39,9 @@ A console application that implements the game [Wheel of Fortune](https://en.wik
     - If guess is not correct, keep playing 
 
 
-#Installation Instructions
+## Installation Instructions
 
-# Screenshots
-
+## Screenshots
 
 
 <details>

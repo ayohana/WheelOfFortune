@@ -10,6 +10,12 @@ namespace WheelOfFortune
     {
         static void Main(string[] args)
         {
+            
+            Console.WriteLine("hello");
+
+
+            Console.ReadLine();
+
         }
     }
 }
