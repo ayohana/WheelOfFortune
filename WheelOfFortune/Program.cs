@@ -4,17 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace WheelOfFortune
 {
     class Program
     {
         static void Main(string[] args)
         {
-            
-            Console.WriteLine("hello");
 
+            Game newGame = new Game();
+            newGame.StartGame();
 
-            Console.ReadLine();
+            newGame.EndGame();
 
         }
     }
