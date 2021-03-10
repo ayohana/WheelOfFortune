@@ -41,7 +41,6 @@ A console application that implements the game [Wheel of Fortune](https://en.wik
     - If guess is not correct, keep playing 
 
 
-
 ##  Future Product Roadmap
 1. Add multiple players feature into game session
 
@@ -51,6 +50,11 @@ A console application that implements the game [Wheel of Fortune](https://en.wik
 
 ## Bugs 
 TBD
+
+## Installation Instructions
+
+## Screenshots
+
 
 ## Technologies Used
  
@@ -73,7 +77,8 @@ TBD
 		* Hamida Shaik
 		* Luna Campos
 		* Rustam Samigullin
-
+	</summary>
+</details>
 
 ﻿3 Wheel of Fortune
 
@@ -81,4 +86,6 @@ TBD
 #Installation Instructions
 
 # Screenshots
+
+
 
