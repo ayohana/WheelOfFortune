@@ -16,6 +16,13 @@ namespace WheelOfFortune
 		public void StartGame()
 		{
 			CurrentPlayer = new Player();
+			Console.WriteLine("Welcome to Wheel of Fortune. A game by SpaceCoders.");
+		}
+
+		public void EndGame()
+		{
+			CurrentPlayer = null;
+			Console.WriteLine("You've reached end of the game!");
 		}
 	}
 }

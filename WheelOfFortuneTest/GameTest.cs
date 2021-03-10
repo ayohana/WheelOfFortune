@@ -38,6 +38,23 @@ namespace WheelOfFortuneTest
             // Assert
             Assert.IsInstanceOfType(currentPlayer, typeof(Player));
         }
-        
+
+        /// <summary>
+        /// Check if EndGame() reassigns CurrentPlayer attribute to be null.
+        /// </summary>
+        [TestMethod]
+        public void EndGame_VerifyCurrentPlayerAttributeToBeNull_ReturnsTrue()
+        {
+            // Arrange
+            Game newGameInstance = new Game();
+
+            // Act
+            newGameInstance.StartGame();            
+            var currentPlayer = newGameInstance.CurrentPlayer;
+            newGameInstance.EndGame();
+
+            // Assert
+            Assert.IsNull(newGameInstance.CurrentPlayer);
+        }
     }
 }
