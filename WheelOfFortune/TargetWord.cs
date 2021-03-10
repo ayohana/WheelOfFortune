@@ -8,10 +8,12 @@ namespace WheelOfFortune
 
 		public TargetWord()
 		{
-			public string GenerateWord()
-			{
-				Console.WriteLine($"The word is {Answer}");
-			}
+
+		}
+
+		public string GenerateWord()
+		{
+			return $"The word is {Answer}";
 		}
 	}
 }
