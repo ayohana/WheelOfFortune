@@ -8,25 +8,36 @@ namespace WheelOfFortuneTest
     public class GameTest
     {
         /// <summary>
-        /// Creating a Game 
+        /// Checks the type of Game instance created
         /// </summary>
         [TestMethod]
-        public void CreateInstanceOfGame_GameInstance()
+        public void GameInstance_CheckTypeOfInstance_ReturnsTypeOfGame()
         {
             // Arrange
             Game newGameInstance = new Game();
 
             // Act
 
-
-            //Assert
-            
+            // Assert
+            Assert.IsInstanceOfType(newGameInstance, typeof(Game));
         }
 
         /// <summary>
-        /// StartGame() would instantiate Player object as an attribute of Game instance.
+        /// Check if StartGame() would instantiate Player object as the CurrentPlayer attribute of Game instance.
         /// </summary>
-        // [TestMethod]
+        [TestMethod]
+        public void StartGame_VerifyTypeOfCurrentPlayerAttribute_ReturnsTrue()
+        {
+            // Arrange
+            Game newGameInstance = new Game();
+
+            // Act
+            newGameInstance.StartGame();
+            var currentPlayer = newGameInstance.CurrentPlayer;
+
+            // Assert
+            Assert.IsInstanceOfType(currentPlayer, typeof(Player));
+        }
         
     }
 }
