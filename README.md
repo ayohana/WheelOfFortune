@@ -1,3 +1,5 @@
+
+
 ﻿# Wheel of Fortune
 
 <div align=center>
@@ -39,9 +41,20 @@ A console application that implements the game [Wheel of Fortune](https://en.wik
     - If guess is not correct, keep playing 
 
 
+##  Future Product Roadmap
+1. Add multiple players feature into game session
+
+2. Add points system that would count points for each correct guess per player
+
+3. Add competitive mode which would allow player to loose.
+
+## Bugs 
+TBD
+
 ## Installation Instructions
 
 ## Screenshots
+
 
 ## Technologies Used
  
@@ -66,3 +79,13 @@ A console application that implements the game [Wheel of Fortune](https://en.wik
 		* Rustam Samigullin
 	</summary>
 </details>
+
+﻿3 Wheel of Fortune
+
+
+#Installation Instructions
+
+# Screenshots
+
+
+
