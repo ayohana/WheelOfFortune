@@ -43,6 +43,18 @@ A console application that implements the game [Wheel of Fortune](https://en.wik
 
 ## Screenshots
 
+## Technologies Used
+ 
+- C#
+
+- .Net Framework
+
+- Visual Studio
+
+- Azure DevOps
+
+- MSTest
+
 
 <details>
 	<summary>Contact and Support</summary>
