@@ -6,14 +6,21 @@ namespace WheelOfFortune
 	{
 		public string Answer = "programming";
 
-		public TargetWord()
-		{
 
+		public string GenerateTargetWord()
+		{
+			return Answer;
 		}
 
-		public string GenerateWord()
-		{
-			return $"The word is {Answer}";
+		public char[] Display()
+        {
+			string targetWord = GenerateTargetWord();
+			char[] emptyTargetWord = targetWord.ToCharArray();
+			for (int i = 0; i < emptyTargetWord.Length; i++)
+			{
+				emptyTargetWord[i] = '-';
+			}
+			return emptyTargetWord;
 		}
 	}
 }

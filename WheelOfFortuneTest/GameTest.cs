@@ -26,6 +26,7 @@ namespace WheelOfFortuneTest
         /// Check if StartGame() would instantiate Player object as the CurrentPlayer attribute of Game instance.
         /// </summary>
         [TestMethod]
+        [Ignore]
         public void StartGame_VerifyTypeOfCurrentPlayerAttribute_ReturnsTrue()
         {
             // Arrange
@@ -43,6 +44,7 @@ namespace WheelOfFortuneTest
         /// Check if EndGame() reassigns CurrentPlayer attribute to be null.
         /// </summary>
         [TestMethod]
+        [Ignore]
         public void EndGame_VerifyCurrentPlayerAttributeToBeNull_ReturnsTrue()
         {
             // Arrange
@@ -50,7 +52,6 @@ namespace WheelOfFortuneTest
 
             // Act
             newGameInstance.StartGame();            
-            var currentPlayer = newGameInstance.CurrentPlayer;
             newGameInstance.EndGame();
 
             // Assert
