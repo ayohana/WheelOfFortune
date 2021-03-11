@@ -15,7 +15,7 @@ namespace WheelOfFortune
             Game newGame = new Game();
             newGame.StartGame();
 
-            newGame.EndGame();
+           // newGame.EndGame();
 
         }
     }

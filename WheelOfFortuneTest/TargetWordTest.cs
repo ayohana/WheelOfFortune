@@ -23,8 +23,21 @@ namespace WheelOfFortuneTest
             Assert.AreEqual(createdWord, "programming");
            
         }
+        [TestMethod]
+        public void IsCorrect_CheckReturnType_ReturnTrue()
+        {
+            // Arrange 
+            TargetWord word = new TargetWord();
 
-  
-      
+            // Act
+            bool isCorrectLetter = word.IsCorrect('p');
+
+            // Assert
+
+            Assert.IsTrue(isCorrectLetter);
+        }
     }
+
+   
+ 
 }

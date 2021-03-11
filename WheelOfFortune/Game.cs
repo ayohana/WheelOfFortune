@@ -19,8 +19,22 @@ namespace WheelOfFortune
 			CurrentPlayer = new Player();
 
 			Console.WriteLine("Welcome to Wheel of Fortune. A game by SpaceCoders.");
-			Console.WriteLine(word.Display());
-			CurrentPlayer.ReadInput();
+			//Console.WriteLine(word.Display());
+			word.Display();
+			
+            while (word.ValidChars.Count > 0) {
+				char letter = CurrentPlayer.ReadInput();
+                if (!word.IsCorrect(letter))
+                {
+					// replace dash with correct letter
+					Console.WriteLine($"Incorrect Letter {letter}");
+					
+                } 
+			}
+
+			EndGame();
+			
+
 		}
 
 		public void EndGame()
