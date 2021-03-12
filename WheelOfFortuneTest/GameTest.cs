@@ -25,6 +25,7 @@ namespace WheelOfFortuneTest
         /// <summary>
         /// Check if StartGame() would instantiate Player object as the CurrentPlayer attribute of Game instance.
         /// </summary>
+        /// TODO: skipping because Console produces error
         [TestMethod]
         [Ignore]
         public void StartGame_VerifyTypeOfCurrentPlayerAttribute_ReturnsTrue()
@@ -43,6 +44,7 @@ namespace WheelOfFortuneTest
         /// <summary>
         /// Check if EndGame() reassigns CurrentPlayer attribute to be null.
         /// </summary>
+        /// TODO: Skipping because console produces Error.
         [TestMethod]
         [Ignore]
         public void EndGame_VerifyCurrentPlayerAttributeToBeNull_ReturnsTrue()

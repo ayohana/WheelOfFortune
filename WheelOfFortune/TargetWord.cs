@@ -3,15 +3,14 @@ using System.Collections.Generic;
 
 namespace WheelOfFortune
 {
+	/// <summary>
+	/// Target Word Contains all the game functionality.
+	/// </summary>
 	public class TargetWord
 	{
 		public string Answer = "programming";
 		public HashSet<char> ValidChars;
 		public char[] EmptyTargetWord;
-
-
-
-
 
 		public TargetWord()
         {
@@ -20,27 +19,45 @@ namespace WheelOfFortune
 			EmptyTargetWord = Answer.ToCharArray();
 		}
 
+		/// <returns>TargetWord.Answer</returns>
 		public string GenerateTargetWord()
 		{
 			return Answer;
 		}
 
-		public char[] Display()
+		/// <summary>
+		/// Generates a Dash for every letter of the Target Word
+		/// </summary>
+		/// <returns>EmptyTargetWord</returns>
+		public char[] GenerateDashes()
         {
 
 			for (int i = 0; i < EmptyTargetWord.Length; i++)
 			{
 				EmptyTargetWord[i] = '-';
 			}
-			Console.WriteLine(EmptyTargetWord);
+			DisplayWord();
 			return EmptyTargetWord;
 		}
 
+		/// <summary>
+		/// Clears console and Displays the Current EmptyTargetWord
+		/// </summary>
+		public void DisplayWord()
+        {
+			Console.Clear();
+			Console.WriteLine(EmptyTargetWord);
+        }
+
+		/// <summary>
+		/// Checks if letter given by User is correct
+		/// </summary>
+		/// <param name="letterToCheck"></param>
+		/// <returns>boolean</returns>
 		public bool IsCorrect(char letterToCheck)
         {
 			if (ValidChars.Contains(letterToCheck))
             {
-				// if correct show letter on screen 
 				for(int i = 0; i < Answer.Length; i++)
                 {
 					if(Answer[i] == letterToCheck)
@@ -48,15 +65,13 @@ namespace WheelOfFortune
 						EmptyTargetWord[i] = letterToCheck;
                     }
                 }
-				Console.Clear();
-				Console.WriteLine(EmptyTargetWord);
-
+				DisplayWord();
+				Console.WriteLine($"The letter {letterToCheck} you guessed is correct!");
 				ValidChars.Remove(letterToCheck);
 				return true;
-            }
-			Console.Clear();
+            } 
+			DisplayWord();
 			return false;
-				 
 		}
 	}
 }

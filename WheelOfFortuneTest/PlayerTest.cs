@@ -24,6 +24,7 @@ namespace WheelOfFortuneTest
         /// <summary>
         /// Checks the type of the letter to be evaluated
         /// </summary>
+        /// TODO: skipping because Console produces error
         [TestMethod]
         [Ignore]
         public void PlayerInstance_CheckTypeOfLetterToEvaluate_ReturnsTrue()
@@ -32,10 +33,10 @@ namespace WheelOfFortuneTest
             Player newPlayerInstance = new Player();
 
             //Act
-            // Char charToEval = newPlayerInstance.ReadInput();
+            Char charToEval = newPlayerInstance.ReadInput();
 
             //Assert
-           // Assert.IsInstanceOfType(charToEval, typeof(char));
+            Assert.IsInstanceOfType(charToEval, typeof(char));
         }
 
     }
