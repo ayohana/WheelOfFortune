@@ -1,6 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WheelOfFortune;
 using System;
+using System.Collections.Generic;
 
 namespace WheelOfFortuneTest
 {
@@ -8,21 +9,22 @@ namespace WheelOfFortuneTest
     public class TargetWordTest
     {
         /// <summary>
-        /// Checks the type of Game instance created
+        /// Checks if the randomly generated word came from the list as expected
         /// </summary>
         [TestMethod]
         public void GenerateTargetWord_CheckReturnType_ReturnTrue()
         {
             // Arrange
             TargetWord word = new TargetWord();
+            List<string> expectedList = word.TargetWordsList;
 
             // Act
-            string createdWord = word.GenerateTargetWord();
+            string randomWordGenerated = word.GenerateTargetWord();
 
             // Assert
-            Assert.AreEqual(createdWord, "programming");
-           
+            Assert.IsTrue(expectedList.Contains(randomWordGenerated));           
         }
+
         /// <summary>
         /// Skipping test
         /// </summary>
