@@ -25,7 +25,7 @@ namespace WheelOfFortune
         }
 
         /// <summary>
-        /// Method is invoked if the Player guesses enitire word correctly and a random point is generated from the list of bonus points
+        /// Method is invoked if the Player guesses entire word correctly and a random point is generated from the list of bonus points
         /// </summary>
         /// <returns>bonusPointsAwarded</returns>
         public int SpinWheelForCorrectWord()
