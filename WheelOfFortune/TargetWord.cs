@@ -85,5 +85,10 @@ namespace WheelOfFortune
 			DisplayWord();
 			return false;
 		}
+
+		public bool IsWordCorrect(string wordToCheck)
+        {
+			return Answer.Equals(wordToCheck);
+        }
 	}
 }
