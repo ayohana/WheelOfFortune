@@ -14,7 +14,7 @@ namespace WheelOfFortuneTest
         public void PlayerInstance_CheckTypeOfInstance_ReturnsTrue()
         {
             // Arrange
-            Player newPlayerInstance = new Player();
+            Player newPlayerInstance = new Player("hardcodenME");
 
             // Act
 
@@ -30,7 +30,7 @@ namespace WheelOfFortuneTest
         public void PlayerInstance_CheckTypeOfLetterToEvaluate_ReturnsTrue()
         {
             //Arrange
-            Player newPlayerInstance = new Player();
+            Player newPlayerInstance = new Player("NAME");
 
             //Act
             Char charToEval = newPlayerInstance.ReadInput();

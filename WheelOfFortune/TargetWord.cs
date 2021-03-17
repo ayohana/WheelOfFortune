@@ -8,21 +8,40 @@ namespace WheelOfFortune
 	/// </summary>
 	public class TargetWord
 	{
-		public string Answer = "programming";
+		public string Answer;
 		public HashSet<char> ValidChars;
+		public HashSet<char> GuessedChars;
 		public char[] EmptyTargetWord;
+		public int Counter = 0;
+
+		public List<string> TargetWordsList = new List<string>()
+		{
+			"programming",
+			"spacecoders",
+			"marlon",
+			"graduation",
+			"rosemary"
+		};
 
 		public TargetWord()
         {
+			Answer = GenerateTargetWord();
 			ValidChars = new HashSet<char>(Answer);
 
+			Counter = 0;
+
 			EmptyTargetWord = Answer.ToCharArray();
+			GuessedChars = new HashSet<char>();
 		}
 
-		/// <returns>TargetWord.Answer</returns>
+		/// <summary>
+		/// Returns a random word from TargetWordsList
+		/// </summary>
 		public string GenerateTargetWord()
 		{
-			return Answer;
+			Random random = new Random();
+			int randomIndex = random.Next(0, TargetWordsList.Count);
+			return TargetWordsList[randomIndex];
 		}
 
 		/// <summary>
@@ -56,13 +75,15 @@ namespace WheelOfFortune
 		/// <returns>boolean</returns>
 		public bool IsCorrect(char letterToCheck)
         {
-			if (ValidChars.Contains(letterToCheck))
+			if (ValidChars.Contains(letterToCheck) && !GuessedChars.Contains(letterToCheck))
             {
 				for(int i = 0; i < Answer.Length; i++)
                 {
 					if(Answer[i] == letterToCheck)
                     {
 						EmptyTargetWord[i] = letterToCheck;
+						Counter += 1;
+						GuessedChars.Add(letterToCheck);
                     }
                 }
 				DisplayWord();
@@ -75,5 +96,10 @@ namespace WheelOfFortune
 			DisplayWord();
 			return false;
 		}
+
+		public bool IsWordCorrect(string wordToCheck)
+        {
+			return Answer.Equals(wordToCheck);
+        }
 	}
 }

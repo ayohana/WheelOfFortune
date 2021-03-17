@@ -52,6 +52,7 @@
     <Compile Include="GameTest.cs" />
     <Compile Include="PlayerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpinWheelTest.cs" />
     <Compile Include="TargetWordTest.cs" />
   </ItemGroup>
   <ItemGroup>

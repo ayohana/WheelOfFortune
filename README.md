@@ -20,72 +20,58 @@ A console application that implements the game [Wheel of Fortune](https://en.wik
 
 ## MVP Goals
 
+    
 1. Supports one player 
 
-2. Choose a string 
-
-    - Hardcoded is fine 
-
-    - Display dashes for missing letters 
+2. Choose a string
+	
+	* Hardcoded is fine 
+	* Display dashes for missing letters
 
 3. Allow current player to guess letters 
-
-    - If letter is in the word, replace underscores with matching letters 
-
-    - If letter is not in word, let play know and keep playing. 
+    
+	* If letter is in the word, replace underscores with matching letters 
+	* If letter is not in word, let play know and keep playing.
 
 4. Allow current player to solve 
-
-    - If guess is correct (not case sensitive), player wins 
-
-    - If guess is not correct, keep playing 
-
+    
+	* If guess is correct (not case sensitive), player wins 
+	* If guess is not correct, keep playing 
 
 ##  Future Product Roadmap
+     
 1. Add multiple players feature into game session
 
 2. Add points system that would count points for each correct guess per player
 
 3. Add competitive mode which would allow player to loose.
 
-## Bugs 
-TBD
 
 ## Installation Instructions
+
+Open Project with Visual Studio and click run.
 
 ## Screenshots
 
 
 ## Technologies Used
- 
-- C#
+  
+1. C#
 
-- .Net Framework
+2. .Net Framework
 
-- Visual Studio
+3. Visual Studio
 
-- Azure DevOps
+4. Azure DevOps
 
-- MSTest
+5. MSTest
 
+## Contact and Support
 
-<details>
-	<summary>Contact and Support</summary>
-	<p>Need help or have any questions, contact SpaceCoders Team</p>
-		* Adela Darmansyah 
-		* Gulzat Karimova 
-		* Hamida Shaik
-		* Luna Campos
-		* Rustam Samigullin
-	</summary>
-</details>
+Need help or have any questions, contact SpaceCoders Team
 
-﻿3 Wheel of Fortune
-
-
-#Installation Instructions
-
-# Screenshots
-
-
-
+* Adela Darmansyah 
+* Gulzat Karimova 
+* Hamida Shaik
+* Luna Campos
+* Rustam Samigullin
