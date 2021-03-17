@@ -13,7 +13,7 @@ namespace WheelOfFortune
 		/// <returns>User Input</returns>
 		public char ReadInput()
         {
-			Console.WriteLine("Please enter a letter");
+			VisualEffects.CenterConsoleText("Please guess a letter");
 			ConsoleKeyInfo userInput = Console.ReadKey(true);
 			Console.WriteLine();
 			Console.WriteLine($"You have entered {userInput.KeyChar}");

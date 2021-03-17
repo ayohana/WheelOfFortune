@@ -45,9 +45,9 @@ namespace WheelOfFortune
 		/// </summary>
 		public void DisplayWord()
         {
-			Console.Clear();
-			Console.WriteLine(EmptyTargetWord);
-        }
+			VisualEffects.AddStyleToTargetWordBoard(EmptyTargetWord);
+
+		}
 
 		/// <summary>
 		/// Checks if letter given by User is correct
@@ -66,10 +66,12 @@ namespace WheelOfFortune
                     }
                 }
 				DisplayWord();
-				Console.WriteLine($"The letter {letterToCheck} you guessed is correct!");
+
+				VisualEffects.ProduceFoundLetterMessageInColor(letterToCheck, true);
+
 				ValidChars.Remove(letterToCheck);
 				return true;
-            } 
+            }
 			DisplayWord();
 			return false;
 		}

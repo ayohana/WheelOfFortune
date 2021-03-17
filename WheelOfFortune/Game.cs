@@ -18,14 +18,14 @@ namespace WheelOfFortune
 		{
 			CurrentPlayer = new Player();
 
-			Console.WriteLine("Welcome to Wheel of Fortune. A game by SpaceCoders.");
+			VisualEffects.StartGameMessage();
 			word.GenerateDashes();
 			
             while (word.ValidChars.Count > 0) {
 				char letter = CurrentPlayer.ReadInput();
                 if (!word.IsCorrect(letter))
                 {
-					Console.WriteLine($"Incorrect Letter {letter}");
+					VisualEffects.ProduceFoundLetterMessageInColor(letter, false);
                 } 
 			}
 			EndGame();
@@ -37,7 +37,7 @@ namespace WheelOfFortune
 		public void EndGame()
 		{
 			CurrentPlayer = null;
-			Console.WriteLine("You've reached end of the game!");
+			VisualEffects.EndGameMessage();
 		}
 	}
 }
