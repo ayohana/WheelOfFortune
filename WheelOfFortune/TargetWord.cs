@@ -8,24 +8,40 @@ namespace WheelOfFortune
 	/// </summary>
 	public class TargetWord
 	{
-		public string Answer = "programming";
+		public string Answer;
 		public HashSet<char> ValidChars;
 		public HashSet<char> GuessedChars;
 		public char[] EmptyTargetWord;
 		public int Counter = 0;
 
+		public List<string> TargetWordsList = new List<string>()
+		{
+			"programming",
+			"spacecoders",
+			"marlon",
+			"graduation",
+			"rosemary"
+		};
+
 		public TargetWord()
         {
+			Answer = GenerateTargetWord();
 			ValidChars = new HashSet<char>(Answer);
+
 			Counter = 0;
+
 			EmptyTargetWord = Answer.ToCharArray();
 			GuessedChars = new HashSet<char>();
 		}
 
-		/// <returns>TargetWord.Answer</returns>
+		/// <summary>
+		/// Returns a random word from TargetWordsList
+		/// </summary>
 		public string GenerateTargetWord()
 		{
-			return Answer;
+			Random random = new Random();
+			int randomIndex = random.Next(0, TargetWordsList.Count);
+			return TargetWordsList[randomIndex];
 		}
 
 		/// <summary>
