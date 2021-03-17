@@ -52,6 +52,9 @@ namespace WheelOfFortune
 					string guessedWord = CurrentPlayer.ReadWordInput();
                     if (word.IsWordCorrect(guessedWord))
                     {
+
+						int points = PointWheel.SpinWheelForCorrectWord();
+						CurrentPlayer.IncreasePoints(points);
 						EndGame();
 						break;
                     }
