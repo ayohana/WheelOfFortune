@@ -26,12 +26,27 @@ namespace WheelOfFortune
         }
 		public char ReadInput()
         {
-			Console.WriteLine("Please enter a letter");
+			Console.Write("Please guess a letter: ");
 			ConsoleKeyInfo userInput = Console.ReadKey(true);
 			Console.WriteLine();
 			Console.WriteLine($"You have entered {userInput.KeyChar}");
 
 			return userInput.KeyChar;
+        }
+
+		public string ReadWordInput()
+        {
+			Console.Write("Please guess a word: ");
+			string userInput = Console.ReadLine();
+			Console.WriteLine();
+			Console.WriteLine($"You have entered {userInput}");
+			return userInput;
+
+		}
+
+		public void IncreasePoints(int points)
+        {
+			Points += points;
         }
 	}
 }

@@ -12,6 +12,7 @@ namespace WheelOfFortune
 		public TargetWord word = new TargetWord();
 		public List<Player> Players = new List<Player>();
 		public int CurrentPlayerIndex = 0;
+		public SpinWheel PointWheel = new SpinWheel();
 		/// <summary>
 		/// This method starts game and keeps track of current game session.
 		/// </summary>
@@ -19,7 +20,7 @@ namespace WheelOfFortune
 		public void StartGame()
 		{
 			Console.WriteLine("Hello, Welcome to Wheel Of Fortune");
-			Console.WriteLine("Please Enter the number of Players. Max is 3");
+			Console.WriteLine("Please Enter the number of Players");
 			var input= Console.ReadLine();
 			// set number of players
 			int numberOfPlayers = Convert.ToInt32(input);
@@ -38,23 +39,46 @@ namespace WheelOfFortune
 
 			CurrentPlayer = Players[CurrentPlayerIndex];
 
+
 			while (true) {
-				char letter = CurrentPlayer.ReadInput();
-                if (!word.IsCorrect(letter))
+
+				Console.WriteLine("Press 1 to guess entire word");
+				Console.WriteLine("Press 2 to guess the letter");
+
+				char choice = Console.ReadKey(true).KeyChar;
+
+				if (choice == '1')
                 {
-					Console.WriteLine($"Incorrect Letter {letter}");
-					// switch current player;
-					SwitchCurrentPlayer();
+					string guessedWord = CurrentPlayer.ReadWordInput();
+                    if (word.IsWordCorrect(guessedWord))
+                    {
+						EndGame();
+						break;
+                    }
+
                 } else {
 
-					if(didWin())
-                    {
-						break;
+					char letter = CurrentPlayer.ReadInput();
+					if (!word.IsCorrect(letter))
+					{
+
+						Console.WriteLine($"Incorrect Letter {letter}");
+						// switch current player;
+						SwitchCurrentPlayer();
+					}
+					else
+					{
+						int points = PointWheel.SpinWheelForCorrectGuessedLetter();
+						CurrentPlayer.IncreasePoints(points);
+						if (didWin())
+						{
+							EndGame();
+							break;
+						}
 					}
 				}
-			}
 
-			EndGame();
+			}
 		}
 
 		/// <summary>
@@ -62,8 +86,10 @@ namespace WheelOfFortune
 		/// </summary>
 		public void EndGame()
 		{
-			CurrentPlayer = null;
+			
+			Console.WriteLine($"{CurrentPlayer.Name} won with {CurrentPlayer.Points} points!");
 			Console.WriteLine("Come back again");
+
 		}
 
 		public void SwitchCurrentPlayer()
@@ -83,12 +109,7 @@ namespace WheelOfFortune
 
 		public bool didWin()
         {
-			if(word.Counter == word.EmptyTargetWord.Length)
-            {
-				Console.WriteLine($"{CurrentPlayer.Name} won with {CurrentPlayer.Points} points!");
-				return true;
-            }
-			return false;
+			return word.Counter == word.EmptyTargetWord.Length;
 		}
 	}
 }
