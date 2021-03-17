@@ -26,7 +26,7 @@ namespace WheelOfFortune
         }
 		public char ReadInput()
         {
-			Console.Write("Please guess a letter: ");
+			VisualEffects.CenterConsoleText("Please guess a letter");
 			ConsoleKeyInfo userInput = Console.ReadKey(true);
 			Console.WriteLine();
 			Console.WriteLine($"You have entered {userInput.KeyChar}");

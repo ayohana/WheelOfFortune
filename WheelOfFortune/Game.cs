@@ -34,6 +34,7 @@ namespace WheelOfFortune
 
 			}
 
+			VisualEffects.StartGameMessage();
 			word.GenerateDashes();
 			// set current player
 
@@ -64,6 +65,7 @@ namespace WheelOfFortune
 					char letter = CurrentPlayer.ReadInput();
 					if (!word.IsCorrect(letter))
 					{
+						VisualEffects.ProduceFoundLetterMessageInColor(letter, false);
 
 						Console.WriteLine($"Incorrect Letter {letter}");
 						// switch current player;
@@ -89,7 +91,8 @@ namespace WheelOfFortune
 		/// </summary>
 		public void EndGame()
 		{
-			
+			// TODO: edit message for winner
+			VisualEffects.EndGameMessage();
 			Console.WriteLine($"{CurrentPlayer.Name} won with {CurrentPlayer.Points} points!");
 			Console.WriteLine("Come back again");
 
