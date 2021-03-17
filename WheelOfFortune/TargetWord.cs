@@ -10,7 +10,10 @@ namespace WheelOfFortune
 	{
 		public string Answer;
 		public HashSet<char> ValidChars;
+		public HashSet<char> GuessedChars;
 		public char[] EmptyTargetWord;
+		public int Counter = 0;
+
 		public List<string> TargetWordsList = new List<string>()
 		{
 			"programming",
@@ -24,7 +27,11 @@ namespace WheelOfFortune
         {
 			Answer = GenerateTargetWord();
 			ValidChars = new HashSet<char>(Answer);
+
+			Counter = 0;
+
 			EmptyTargetWord = Answer.ToCharArray();
+			GuessedChars = new HashSet<char>();
 		}
 
 		/// <summary>
@@ -68,18 +75,19 @@ namespace WheelOfFortune
 		/// <returns>boolean</returns>
 		public bool IsCorrect(char letterToCheck)
         {
-			if (ValidChars.Contains(letterToCheck))
+			if (ValidChars.Contains(letterToCheck) && !GuessedChars.Contains(letterToCheck))
             {
 				for(int i = 0; i < Answer.Length; i++)
                 {
 					if(Answer[i] == letterToCheck)
                     {
 						EmptyTargetWord[i] = letterToCheck;
+						Counter += 1;
+						GuessedChars.Add(letterToCheck);
                     }
                 }
 				DisplayWord();
 				Console.WriteLine($"The letter {letterToCheck} you guessed is correct!");
-				ValidChars.Remove(letterToCheck);
 				return true;
             } 
 			DisplayWord();

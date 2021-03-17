@@ -31,7 +31,7 @@ namespace WheelOfFortune
         public int SpinWheelForCorrectWord()
         {
             int pointsIndex = random.Next(bonusPoints.Count);
-            int bonusPointsAwarded = awardPoints[pointsIndex];
+            int bonusPointsAwarded = bonusPoints[pointsIndex];
             return bonusPointsAwarded;
         }
 

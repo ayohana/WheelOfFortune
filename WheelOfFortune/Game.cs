@@ -3,69 +3,116 @@ using System.Collections.Generic;
 
 namespace WheelOfFortune
 {
-    /// <summary>
-    /// Game starts with one player and one word, keeps track of session and ends when the player wins.
-    /// </summary>
-    public class Game
-    {
-        public Player CurrentPlayer;
-        public TargetWord word = new TargetWord();
+	/// <summary>
+	/// Game starts with one player and one word, keeps track of session and ends when the player wins.
+	/// </summary>
+	public class Game
+	{
+		public Player CurrentPlayer;
+		public TargetWord word = new TargetWord();
+		public List<Player> Players = new List<Player>();
+		public int CurrentPlayerIndex = 0;
+		public SpinWheel PointWheel = new SpinWheel();
+		/// <summary>
+		/// This method starts game and keeps track of current game session.
+		/// </summary>
+		// TO DO: refactor while loop into seperate method
+		public void StartGame()
+		{
+			Console.WriteLine("Hello, Welcome to Wheel Of Fortune");
+			Console.WriteLine("Please Enter the number of Players");
+			var input= Console.ReadLine();
+			// set number of players
+			int numberOfPlayers = Convert.ToInt32(input);
 
-        /// <summary>
-        /// This method starts game and keeps track of current game session.
-        /// </summary>
-        // TO DO: refactor while loop into seperate method
-        public void StartGame()
-        {
-            CurrentPlayer = new Player();
-
-            Console.WriteLine("Welcome to Wheel of Fortune. A game by SpaceCoders.");
-            word.GenerateDashes();
-
-            while (word.ValidChars.Count > 0)
+			for(int i = 0; i < numberOfPlayers; i++)
             {
-                Console.WriteLine("Press 1 to guess character, 2 to guess full word.");
-                char choice = Console.ReadKey(true).KeyChar;
+				Console.WriteLine("Please enter name of the Player");
+				var name = Console.ReadLine();
+				name = Convert.ToString(name);
+				Players.Add(new Player(name));
 
-                if (choice == '1')
+			}
+
+			word.GenerateDashes();
+			// set current player
+
+			CurrentPlayer = Players[CurrentPlayerIndex];
+
+
+			while (true) {
+
+				Console.WriteLine("Press 1 to guess entire word");
+				Console.WriteLine("Press 2 to guess the letter");
+
+				char choice = Console.ReadKey(true).KeyChar;
+
+				if (choice == '1')
                 {
-
-                    char letter = CurrentPlayer.ReadInput();
-                    if (!word.IsCorrect(letter))
+					string guessedWord = CurrentPlayer.ReadWordInput();
+                    if (word.IsWordCorrect(guessedWord))
                     {
-                        Console.WriteLine($"Incorrect Letter {letter}");
-                    }
-                }
-                else if (choice == '2')
-                {
-                    string guessedWord = CurrentPlayer.ReadWordInput();
-                    if (!word.IsWordCorrect(guessedWord))
-                    {
-                        Console.WriteLine($"Incorrect word {guessedWord}");
-                    }
-                    else
-                    {
-                        // Whole word is found. So, we set valid characters to empty.
-                        word.ValidChars = new HashSet<char>();
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Please enter correct choice.");
-                }
-            }
 
-            EndGame();
-        }
+						int points = PointWheel.SpinWheelForCorrectWord();
+						CurrentPlayer.IncreasePoints(points);
+						EndGame();
+						break;
+                    }
 
-        /// <summary>
-        /// Ends the game.
-        /// </summary>
-        public void EndGame()
+                } else {
+
+					char letter = CurrentPlayer.ReadInput();
+					if (!word.IsCorrect(letter))
+					{
+
+						Console.WriteLine($"Incorrect Letter {letter}");
+						// switch current player;
+						SwitchCurrentPlayer();
+					}
+					else
+					{
+						int points = PointWheel.SpinWheelForCorrectGuessedLetter();
+						CurrentPlayer.IncreasePoints(points);
+						if (didWin())
+						{
+							EndGame();
+							break;
+						}
+					}
+				}
+
+			}
+		}
+
+		/// <summary>
+		/// Ends the game.
+		/// </summary>
+		public void EndGame()
+		{
+			
+			Console.WriteLine($"{CurrentPlayer.Name} won with {CurrentPlayer.Points} points!");
+			Console.WriteLine("Come back again");
+
+		}
+
+		public void SwitchCurrentPlayer()
         {
-            CurrentPlayer = null;
-            Console.WriteLine("You've reached end of the game!");
-            Console.ReadLine();
-        }
-    }
+			if (CurrentPlayerIndex + 1 == Players.Count)
+			{
+				CurrentPlayerIndex = 0;
+				CurrentPlayer = Players[CurrentPlayerIndex];
+			}
+			else
+			{
+				CurrentPlayer = Players[++CurrentPlayerIndex];
+			}
+			Console.WriteLine($"Switching Player. Player {CurrentPlayer.Name}, it's your turn");
+
+		}
+
+		public bool didWin()
+        {
+			return word.Counter == word.EmptyTargetWord.Length;
+		}
+	}
 }
