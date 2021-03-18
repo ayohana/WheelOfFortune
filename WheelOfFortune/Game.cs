@@ -19,15 +19,14 @@ namespace WheelOfFortune
 		// TO DO: refactor while loop into seperate method
 		public void StartGame()
 		{
-			Console.WriteLine("Hello, Welcome to Wheel Of Fortune");
-			Console.WriteLine("Please Enter the number of Players");
+			VisualEffects.StartGameMessage();
 			var input= Console.ReadLine();
 			// set number of players
 			int numberOfPlayers = Convert.ToInt32(input);
 
 			for(int i = 0; i < numberOfPlayers; i++)
             {
-				Console.WriteLine("Please enter name of the Player");
+				VisualEffects.CenterConsoleText("Please enter name of the Player");
 				var name = Console.ReadLine();
 				name = Convert.ToString(name);
 				Players.Add(new Player(name));
@@ -43,8 +42,8 @@ namespace WheelOfFortune
 
 			while (true) {
 
-				Console.WriteLine("Press 1 to guess entire word");
-				Console.WriteLine("Press 2 to guess the letter");
+				VisualEffects.CenterConsoleText("Press 1 to guess entire word");
+				VisualEffects.CenterConsoleText("Press 2 to guess the letter");
 
 				char choice = Console.ReadKey(true).KeyChar;
 
@@ -53,21 +52,24 @@ namespace WheelOfFortune
 					string guessedWord = CurrentPlayer.ReadWordInput();
                     if (word.IsWordCorrect(guessedWord))
                     {
-
+						word.DisplayWord();
+						VisualEffects.CenterConsoleText($"The word {guessedWord} is Correct!");
 						int points = PointWheel.SpinWheelForCorrectWord();
 						CurrentPlayer.IncreasePoints(points);
 						EndGame();
 						break;
+                    } else
+                    {
+						word.DisplayWord();
+						VisualEffects.CenterConsoleText($"The word {guessedWord} is Incorrect!");
                     }
 
                 } else {
 
-					char letter = CurrentPlayer.ReadInput();
+					char letter = CurrentPlayer.ReadLetterInput();
 					if (!word.IsCorrect(letter))
 					{
 						VisualEffects.ProduceFoundLetterMessageInColor(letter, false);
-
-						Console.WriteLine($"Incorrect Letter {letter}");
 						// switch current player;
 						SwitchCurrentPlayer();
 					}
@@ -92,10 +94,8 @@ namespace WheelOfFortune
 		public void EndGame()
 		{
 			// TODO: edit message for winner
+			VisualEffects.CenterConsoleText($"{CurrentPlayer.Name} won with {CurrentPlayer.Points} points!");
 			VisualEffects.EndGameMessage();
-			Console.WriteLine($"{CurrentPlayer.Name} won with {CurrentPlayer.Points} points!");
-			Console.WriteLine("Come back again");
-
 		}
 
 		public void SwitchCurrentPlayer()
@@ -109,7 +109,7 @@ namespace WheelOfFortune
 			{
 				CurrentPlayer = Players[++CurrentPlayerIndex];
 			}
-			Console.WriteLine($"Switching Player. Player {CurrentPlayer.Name}, it's your turn");
+			VisualEffects.CenterConsoleText($"Switching Player. Player {CurrentPlayer.Name}, it's your turn");
 
 		}
 

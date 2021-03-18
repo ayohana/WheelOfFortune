@@ -24,12 +24,12 @@ namespace WheelOfFortune
 			Points = 0;
 
         }
-		public char ReadInput()
+		public char ReadLetterInput()
         {
 			VisualEffects.CenterConsoleText("Please guess a letter");
 			ConsoleKeyInfo userInput = Console.ReadKey(true);
 			Console.WriteLine();
-			Console.WriteLine($"You have entered {userInput.KeyChar}");
+			VisualEffects.CenterConsoleText($"You have entered {userInput.KeyChar}");
 
 			return userInput.KeyChar;
         }
@@ -39,7 +39,7 @@ namespace WheelOfFortune
 			Console.Write("Please guess a word: ");
 			string userInput = Console.ReadLine();
 			Console.WriteLine();
-			Console.WriteLine($"You have entered {userInput}");
+			VisualEffects.CenterConsoleText($"You have entered {userInput}");
 			return userInput;
 
 		}

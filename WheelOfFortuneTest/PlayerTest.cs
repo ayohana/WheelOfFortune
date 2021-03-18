@@ -33,7 +33,7 @@ namespace WheelOfFortuneTest
             Player newPlayerInstance = new Player("NAME");
 
             //Act
-            Char charToEval = newPlayerInstance.ReadInput();
+            Char charToEval = newPlayerInstance.ReadLetterInput();
 
             //Assert
             Assert.IsInstanceOfType(charToEval, typeof(char));

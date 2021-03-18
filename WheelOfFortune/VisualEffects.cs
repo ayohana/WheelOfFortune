@@ -50,8 +50,7 @@ namespace WheelOfFortune
                 Console.Write(letter);
             }
             Console.ResetColor();
-            CenterConsoleText("Press any key to start playing"); 
-            Console.ReadKey();
+            CenterConsoleText("Please Enter the number of Players");
         }
         /// <summary>
         /// Produces a message when the user ends the game
@@ -59,7 +58,9 @@ namespace WheelOfFortune
         public static void EndGameMessage()
         {
             Console.ForegroundColor = ConsoleColor.DarkGreen;
-            VisualEffects.CenterConsoleText("You've reached end of the game!");
+            CenterConsoleText("You've reached end of the game!");
+            CenterConsoleText("Come back again");
+
             Console.ReadKey();
         }
         /// <summary>

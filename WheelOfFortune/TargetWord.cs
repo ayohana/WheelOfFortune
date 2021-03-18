@@ -99,7 +99,12 @@ namespace WheelOfFortune
 
 		public bool IsWordCorrect(string wordToCheck)
         {
-			return Answer.Equals(wordToCheck);
+            if (Answer.Equals(wordToCheck))
+            {
+				EmptyTargetWord = Answer.ToCharArray();
+				return true;
+            }
+			return false;
         }
 	}
 }
