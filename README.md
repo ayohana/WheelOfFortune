@@ -100,7 +100,12 @@ A console application that implements the game [Wheel of Fortune](https://en.wik
 
 ## Screenshots
 
-_In progress_
+<div align=center>
+
+#### Product Demo
+![Product Demo](./img/product_demo.gif)
+
+</div>
 
 ## Technologies Used
   
@@ -141,6 +146,10 @@ No known bugs at this time.
 - [Azure Pipelines: How to initiate an Azure Pipeline](https://elanderson.net/2020/03/pipeline-creation-in-azure-devops/)
 
 - [Azure Pipelines: Key Concepts](https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started/key-pipelines-concepts?view=azure-devops)
+
+- [Publish a .NET Console Application using Visual Studio](https://docs.microsoft.com/en-us/dotnet/core/tutorials/publishing-with-visual-studio)
+
+- [Azure DevOps: Using Queries](https://docs.microsoft.com/en-us/azure/devops/boards/queries/using-queries?view=azure-devops&tabs=browser)
 
 ## Contact and Support
 
