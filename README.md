@@ -38,12 +38,10 @@ A console application that implements the game [Wheel of Fortune](https://en.wik
 <div align=center>
 
 #### First Draft of Conceptual Object Model
-![Image alt text](./img/WheelOfFortune_SpaceCoders-Conceptual%20Object%20Model.png)
-<img src="./img/WheelOfFortune_SpaceCoders-Conceptual%20Object%20Model.png" width=600px alt="First Draft of our Conceptual Object Model">
+![First Draft of our Conceptual Object Model](./img/WheelOfFortune_SpaceCoders-Conceptual%20Object%20Model.png)
 
 #### First Draft of Classes Diagram
-
-<img src="./img/WheelOfFortune_SpaceCoders-Class Diagrams.png" width=600px alt="First Draft of our Classes Diagram">
+![First Draft of our Classes Diagram](./img/WheelOfFortune_SpaceCoders-Class%20Diagrams.png)
 
 </div>
 
