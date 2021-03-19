@@ -1,12 +1,14 @@
 <div align=center>
 
-# [Wheel of Fortune](https://v-spacecoders@dev.azure.com/v-spacecoders/WheelOfFortune/_git/WheelOfFortune)
+# [Wheel of Fortune](https://github.com/ayohana/WheelOfFortune)
 
 #### A C# Team Project for [Microsoft Leap](https://www.linkedin.com/company/microsoftleap/), 03.08.2021 - 03.19.2021
 
 #### By **SpaceCoders** : Adela Darmansyah, Gulzat Karimova, Hamida Shaik, Luna Campos, Rustam Samigullin
 
 [About](#About) | [MVP Goals](#MVP-Goals) | [UML Class Diagrams](#UML-Class-Diagrams) | [Future Product Roadmap](#Future-Product-Roadmap) | [Installation Instructions](#Installation-Instructions) | [Screenshots](#Screenshots) | [Technologies Used](#Technologies-Used) | [Known Bugs](#Known-Bugs) | [Resources](#Resources) | [Contact and Support](#Contact-and-Support)
+
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/ayohana/WheelOfFortune/master?color=%23DE98B2&style=for-the-badge) ![GitHub language count](https://img.shields.io/github/languages/count/ayohana/WheelOfFortune?color=%23DE98B2&style=for-the-badge) ![GitHub top language](https://img.shields.io/github/languages/top/ayohana/WheelOfFortune?color=%23DE98B2&style=for-the-badge)
 
 </div>
 
