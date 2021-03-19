@@ -39,7 +39,7 @@ A console application that implements the game [Wheel of Fortune](https://en.wik
 
 #### First Draft of Conceptual Object Model
 
-<img src="./img/WheelOfFortune_SpaceCoders-Conceptual-Object-Model.png" width=600px alt="First Draft of our Conceptual Object Model">
+<img src="./img/WheelOfFortune_SpaceCoders-Conceptual%20Object%20Model.png" width=600px alt="First Draft of our Conceptual Object Model">
 
 #### First Draft of Classes Diagram
 
